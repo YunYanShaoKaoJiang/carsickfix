@@ -1,0 +1,16 @@
+# build output
+build/
+*.apk
+*.idsig
+
+# signing material (never publish)
+*.jks
+*.keystore
+keystore.properties
+
+# local / IDE
+local.properties
+.gradle/
+.idea/
+*.iml
+.DS_Store

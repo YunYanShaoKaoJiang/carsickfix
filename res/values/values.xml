@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">晕车缓解触摸修复</string>
+
+    <string-array name="xposedscope">
+        <item>com.miui.securitycenter</item>
+        <item>com.miui.securitycore</item>
+        <item>com.miui.securityadd</item>
+    </string-array>
+</resources>
