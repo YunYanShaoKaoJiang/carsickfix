@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.carsickfix"
-    android:versionCode="1"
-    android:versionName="1.0">
+    package="com.kernel.xiaomicarsickfix"
+    android:versionCode="2"
+    android:versionName="1.1">
 
     <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="36" />
 
     <application
         android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
         android:hasCode="true"
         android:allowBackup="false">
 

@@ -1,6 +1,4 @@
-# build output
 build/
-*.apk
 *.idsig
 
 # signing material (never publish)

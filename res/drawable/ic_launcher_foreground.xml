@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+    <!-- 白色圆角底板 -->
+    <path
+        android:fillColor="#EDEFF3"
+        android:pathData="M188,96 L324,96 Q416,96 416,188 L416,324 Q416,416 324,416 L188,416 Q96,416 96,324 L96,188 Q96,96 188,96 Z" />
+    <!-- mi 字形 -->
+    <path
+        android:fillColor="#1B1B1D"
+        android:pathData="M171,326 L171,220 Q171,186 205,186 L255,186 Q289,186 289,220 L289,326 L263,326 L263,244 Q263,216 235,216 L225,216 Q197,216 197,244 L197,326 Z" />
+    <path
+        android:fillColor="#1B1B1D"
+        android:pathData="M311,186 L341,186 L341,326 L311,326 Z" />
+</vector>

@@ -1,4 +1,4 @@
-package io.github.carsickfix;
+package com.kernel.xiaomicarsickfix;
 
 import android.view.WindowManager;
 

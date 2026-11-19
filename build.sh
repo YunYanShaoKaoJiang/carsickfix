@@ -3,11 +3,10 @@ set -e
 
 SDK=/opt/android-sdk
 BT=$SDK/build-tools/36.0.0
-AAPT2=/opt/aapt2-wrapper
 AJ=$SDK/platforms/android-36/android.jar
+AAPT2=/opt/aapt2-wrapper
 ROOT=/workspace/carsickfix
 B=$ROOT/build
-PKG=io.github.carsickfix
 
 rm -rf "$B"
 mkdir -p "$B/stub" "$B/mod" "$B/apk/assets"
@@ -17,7 +16,7 @@ javac -source 8 -target 8 -nowarn -d "$B/stub" $(find "$ROOT/src/de" -name '*.ja
 jar cf "$B/stubs.jar" -C "$B/stub" .
 
 echo "[2/7] compile module"
-javac -source 8 -target 8 -nowarn -cp "$B/stub:$AJ" -d "$B/mod" $(find "$ROOT/src/io" -name '*.java') 2>&1 | grep -v 'bootstrap class path' || true
+javac -source 8 -target 8 -nowarn -cp "$B/stub:$AJ" -d "$B/mod" $(find "$ROOT/src/com" -name '*.java') 2>&1 | grep -v 'bootstrap class path' || true
 
 echo "[3/7] dex"
 "$BT/d8" --lib "$AJ" --classpath "$B/stubs.jar" --min-api 30 --output "$B" $(find "$B/mod" -name '*.class')
@@ -42,7 +41,7 @@ if [ ! -f "$ROOT/keystore.jks" ]; then
 fi
 zipalign -f 4 "$B/unsigned.apk" "$B/aligned.apk"
 apksigner sign --ks "$ROOT/keystore.jks" --ks-pass pass:carsickfix --key-pass pass:carsickfix \
-  --ks-key-alias carsickfix --out "$B/carsickfix.apk" "$B/aligned.apk"
-apksigner verify --print-certs "$B/carsickfix.apk" | head -3
+  --ks-key-alias carsickfix --out "$B/xiaomicarsickfix.apk" "$B/aligned.apk"
+apksigner verify --print-certs "$B/xiaomicarsickfix.apk" | head -3
 
-ls -l "$B/carsickfix.apk"
+ls -l "$B/xiaomicarsickfix.apk"
